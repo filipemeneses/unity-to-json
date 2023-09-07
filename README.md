@@ -23,14 +23,9 @@ npm install @filipemeneses/unity-to-json
 yarn add @filipemeneses/unity-to-json
 ```
 
-## Usage
+## Using with Three.js
 
-```ts
-import { myPackage } from '@filipemeneses/unity-to-json';
-
-myPackage('hello');
-//=> 'hello from my package'
-```
+See [https://github.com/filipemeneses/svelte-vite-unity-threejs](https://github.com/filipemeneses/svelte-vite-unity-threejs)
 
 
 [build-img]:https://github.com/filipemeneses/unity-to-json/actions/workflows/release.yml/badge.svg
