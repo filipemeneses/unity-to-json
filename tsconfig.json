@@ -66,7 +66,9 @@
   },
   "include": [
     "src/**/*.ts",
-    "**/*.config.js",
-    ".eslintrc.js"
+    "**/*.config.js"
+  ],
+  "files": [
+    "global.d.ts"
   ]
 }
