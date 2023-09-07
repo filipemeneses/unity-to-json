@@ -69,6 +69,6 @@
     "**/*.config.js"
   ],
   "files": [
-    "global.d.ts"
+    "src/global.d.ts"
   ]
 }
