@@ -16,11 +16,34 @@ Node.js package to convert Unity scene and FBX files into JSON
 ## Install
 
 ```bash
-npm install @filipemeneses/unity-to-json
+npm install unity-to-json
 ```
 
 ```bash
-yarn add @filipemeneses/unity-to-json
+yarn add unity-to-json
+```
+
+## Usage
+
+```js
+import path from 'path';
+
+const {
+  sceneFiles,
+  guidMapping,
+  filenameMapping,
+} = await convertUnityProjectToJson({
+  unityProjectRootFolderPath: path.resolve('../path/to/unity-project-root'),
+});
+
+const sceneFile = sceneFiles.find((r) => r.filename === 'myScene.unity');
+
+// contains scene represented in JSON with all FBX assets converted to GLTF base64
+const scene = await interpretScene({
+  sceneData: sceneFile.data,
+  guidMapping,
+  filenameMapping,
+});
 ```
 
 ## Using with Three.js
@@ -31,7 +54,6 @@ See [https://github.com/filipemeneses/svelte-vite-unity-threejs](https://github.
 [build-img]:https://github.com/filipemeneses/unity-to-json/actions/workflows/release.yml/badge.svg
 [build-url]:https://github.com/filipemeneses/unity-to-json/actions/workflows/release.yml
 [downloads-img]:https://img.shields.io/npm/dt/unity-to-json
-[downloads-url]:https://www.npmtrends.com/unity-to-json
 [npm-img]:https://img.shields.io/npm/v/unity-to-json
 [npm-url]:https://www.npmjs.com/package/unity-to-json
 [issues-img]:https://img.shields.io/github/issues/filipemeneses/unity-to-json
