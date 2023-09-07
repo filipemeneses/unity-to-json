@@ -1,7 +1,7 @@
 {
   "name": "@filipemeneses/unity-to-json",
   "version": "0.0.0-development",
-  "description": "A javascript package to convert unity scene and FBX files into JSON",
+  "description": "NPM package to convert unity scene and FBX files into JSON",
   "main": "./lib/index.js",
   "files": [
     "lib/**/*"
