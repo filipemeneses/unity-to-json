@@ -1,6 +1,6 @@
 # unity-to-json
 
-NPM package to convert unity scene and FBX files into JSON
+Node.js package to convert Unity scene and FBX files into JSON
 
 ---
 
