@@ -1,6 +1,12 @@
 import yaml from 'js-yaml';
 
-export const parseUnityFile = (unityFileText: string) => {
+export type UnityOrMetaFile = object | {
+  fileId: string,
+  type: string,
+  guid: string,
+}
+
+export const parseUnityFile = (unityFileText: string): UnityOrMetaFile => {
   const unityRawText = unityFileText.replace(/%TAG.+\r?\n?/, '');
   const blocks = unityRawText.split('--- !u!');
   const validBlocks = blocks;

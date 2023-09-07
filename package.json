@@ -116,6 +116,7 @@
   },
   "dependencies": {
     "fbx2gltf": "^0.9.7-p1",
+    "glob": "^10.3.4",
     "js-yaml": "^4.1.0"
   }
 }
