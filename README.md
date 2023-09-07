@@ -53,16 +53,16 @@ Default: `rainbows`
 
 Lorem ipsum.
 
-[build-img]:https://github.com/ryansonshine/unity-to-json/actions/workflows/release.yml/badge.svg
-[build-url]:https://github.com/ryansonshine/unity-to-json/actions/workflows/release.yml
+[build-img]:https://github.com/filipemeneses/unity-to-json/actions/workflows/release.yml/badge.svg
+[build-url]:https://github.com/filipemeneses/unity-to-json/actions/workflows/release.yml
 [downloads-img]:https://img.shields.io/npm/dt/unity-to-json
 [downloads-url]:https://www.npmtrends.com/unity-to-json
 [npm-img]:https://img.shields.io/npm/v/unity-to-json
 [npm-url]:https://www.npmjs.com/package/unity-to-json
-[issues-img]:https://img.shields.io/github/issues/ryansonshine/unity-to-json
-[issues-url]:https://github.com/ryansonshine/unity-to-json/issues
-[codecov-img]:https://codecov.io/gh/ryansonshine/unity-to-json/branch/main/graph/badge.svg
-[codecov-url]:https://codecov.io/gh/ryansonshine/unity-to-json
+[issues-img]:https://img.shields.io/github/issues/filipemeneses/unity-to-json
+[issues-url]:https://github.com/filipemeneses/unity-to-json/issues
+[codecov-img]:https://codecov.io/gh/filipemeneses/unity-to-json/branch/main/graph/badge.svg
+[codecov-url]:https://codecov.io/gh/filipemeneses/unity-to-json
 [semantic-release-img]:https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-release-url]:https://github.com/semantic-release/semantic-release
 [commitizen-img]:https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
