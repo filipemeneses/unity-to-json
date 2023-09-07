@@ -27,6 +27,7 @@ yarn add unity-to-json
 
 ```js
 import path from 'path';
+import { convertUnityProjectToJson, interpretScene } from 'unity-to-json';
 
 const {
   sceneFiles,
