@@ -66,6 +66,7 @@
   },
   "include": [
     "src/**/*.ts",
-    "**/*.config.js"
+    "**/*.config.js",
+    ".eslintrc.js"
   ]
 }

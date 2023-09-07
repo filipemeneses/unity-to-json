@@ -1,13 +1,13 @@
-import { myPackage } from '.';
+import * as unityToJsonModule from '.';
 
-describe('index', () => {
-  describe('myPackage', () => {
-    it('should return a string containing the message', () => {
-      const message = 'Hello';
+import {
+  parseUnityFile,
+} from './unity/parseUnityFile';
 
-      const result = myPackage(message);
+describe('unityToJsonModule', () => {
+  it('should export `parseUnityFile`', () => {
+    expect(unityToJsonModule).toHaveProperty('parseUnityFile');
 
-      expect(result).toMatch(message);
-    });
+    expect(unityToJsonModule.parseUnityFile).toEqual(parseUnityFile);
   });
 });

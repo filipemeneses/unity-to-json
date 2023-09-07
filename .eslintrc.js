@@ -4,6 +4,7 @@ module.exports = {
   env: {
     jest: true,
   },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
@@ -15,6 +16,7 @@ module.exports = {
   ],
   rules: {
     'import/prefer-default-export': 'off',
+    'import/extensions': 'off',
     'node/no-missing-import': 'off',
     'node/no-empty-function': 'off',
     'node/no-unsupported-features/es-syntax': 'off',
