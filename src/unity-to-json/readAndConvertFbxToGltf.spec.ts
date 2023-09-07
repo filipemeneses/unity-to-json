@@ -1,12 +1,12 @@
 import path from 'path';
-import { convertFbxToGltf } from './convertFbxToGltf';
+import { readAndConvertFbxToGltf } from './readAndConvertFbxToGltf';
 
-describe('convertFbxToGltf', () => {
+describe('readAndConvertFbxToGltf', () => {
   it('should convert FBX to GLTF', async () => {
     const fixturePath = path.resolve(__dirname, 'fixture/blasterA.fbx');
 
     await expect(
-      convertFbxToGltf(fixturePath),
+      readAndConvertFbxToGltf(fixturePath),
     ).resolves.toStartWith('Z2xURgIAAAD8ZgAALBUAAEpTT057CiJhc3NldCI6IHsKImdlbmVyYXRvciI6ICJGQlgyZ2xURiB2MC45LjciLAoid');
   });
 });

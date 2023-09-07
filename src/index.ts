@@ -1,2 +1,2 @@
 export { parseUnityFile } from './unity/parseUnityFile';
-export { convertFbxToGltf } from './unity-to-json/convertFbxToGltf';
+export { readAndConvertFbxToGltf } from './unity-to-json/readAndConvertFbxToGltf';

@@ -1,5 +1,5 @@
 import * as unityToJsonModule from '.';
-import { convertFbxToGltf } from './unity-to-json/convertFbxToGltf';
+import { readAndConvertFbxToGltf } from './unity-to-json/readAndConvertFbxToGltf';
 
 import {
   parseUnityFile,
@@ -8,9 +8,9 @@ import {
 describe('unityToJsonModule', () => {
   it('should export `parseUnityFile`', () => {
     expect(unityToJsonModule).toHaveProperty('parseUnityFile');
-    expect(unityToJsonModule).toHaveProperty('convertFbxToGltf');
+    expect(unityToJsonModule).toHaveProperty('readAndConvertFbxToGltf');
 
     expect(unityToJsonModule.parseUnityFile).toEqual(parseUnityFile);
-    expect(unityToJsonModule.convertFbxToGltf).toEqual(convertFbxToGltf);
+    expect(unityToJsonModule.readAndConvertFbxToGltf).toEqual(readAndConvertFbxToGltf);
   });
 });
