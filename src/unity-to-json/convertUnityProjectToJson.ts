@@ -20,18 +20,21 @@ const loadAndParseFiles = (files: string[]): Promise<any | UnityOrMetaFile> => P
 
 export const convertUnityProjectToJson = async ({
   unityProjectRootFolderPath,
+
+  customSceneFolderPath,
+  customAssetsFolderPath,
 }: {
   unityProjectRootFolderPath: string,
+
+  customSceneFolderPath?: string,
+  customAssetsFolderPath?: string,
 }) => {
   const SCENES_FILES_GLOB = relativeWindowsSafeUrl(
-    `${path.resolve(unityProjectRootFolderPath, './Assets/Scenes')}/**/*.unity`,
+    `${customSceneFolderPath ?? path.resolve(unityProjectRootFolderPath, './Assets/Scenes')}/**/*.unity`,
   );
-  const META_FILES_GLOB = relativeWindowsSafeUrl(
-    `${path.resolve(unityProjectRootFolderPath, './Assets')}/**/*.meta`,
-  );
-  const FBX_FILES_GLOB = relativeWindowsSafeUrl(
-    `${path.resolve(unityProjectRootFolderPath, './Assets')}/**/*.fbx`,
-  );
+  const ASSETS_FOLDER_PATH = customAssetsFolderPath ?? path.resolve(unityProjectRootFolderPath, './Assets');
+  const META_FILES_GLOB = relativeWindowsSafeUrl(`${ASSETS_FOLDER_PATH}/**/*.meta`);
+  const FBX_FILES_GLOB = relativeWindowsSafeUrl(`${ASSETS_FOLDER_PATH}/**/*.fbx`);
 
   const sceneFiles = await loadAndParseFiles(await glob(SCENES_FILES_GLOB));
   const metaFiles = await loadAndParseFiles(await glob(META_FILES_GLOB));
