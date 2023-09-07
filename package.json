@@ -1,5 +1,5 @@
 {
-  "name": "unity-to-json",
+  "name": "@filipemeneses/unity-to-json",
   "version": "0.0.0-development",
   "description": "Node.js package to convert unity scene and FBX files into JSON",
   "main": "./lib/index.js",
