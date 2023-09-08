@@ -1,4 +1,13 @@
-export { interpretScene } from './unity-to-json/interpretScene';
-export { parseUnityFile } from './unity/parseUnityFile';
-export { readAndConvertFbxToGltf } from './unity-to-json/readAndConvertFbxToGltf';
-export { convertUnityProjectToJson } from './unity-to-json/convertUnityProjectToJson';
+import { interpretScene } from './unity-to-json/interpretScene/index';
+import { parseUnityFile } from './unity/parseUnityFile';
+import { readAndConvertFbxToGltf } from './unity-to-json/readAndConvertFbxToGltf';
+import { convertUnityProjectToJson } from './unity-to-json/convertUnityProjectToJson';
+import { createUnityProjectToJsonWatcher } from './unity-to-json/createUnityProjectToJsonWatcher';
+
+export {
+  interpretScene,
+  parseUnityFile,
+  readAndConvertFbxToGltf,
+  convertUnityProjectToJson,
+  createUnityProjectToJsonWatcher,
+};

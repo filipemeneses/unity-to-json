@@ -34,24 +34,21 @@
     "node": ">=16.0"
   },
   "keywords": [
-    "boilerplate",
-    "template",
+    "threejs",
+    "three.js",
     "typescript",
-    "vscode",
-    "jest",
-    "husky",
-    "commitizen",
-    "semantic-release",
-    "codecov"
+    "unity"
   ],
   "bugs": {
     "url": "https://github.com/filipemeneses/unity-to-json/issues"
   },
   "homepage": "https://github.com/filipemeneses/unity-to-json#readme",
   "devDependencies": {
+    "@types/glob-watcher": "^5.0.2",
     "@types/jest": "^27.5.2",
     "@types/js-yaml": "^4.0.5",
     "@types/node": "^20.5.9",
+    "@types/normalize-path": "^3.0.0",
     "@typescript-eslint/parser": "^6.6.0",
     "commitizen": "^4.3.0",
     "conventional-changelog-conventionalcommits": "^7.0.1",
@@ -86,6 +83,8 @@
   "dependencies": {
     "fbx2gltf": "^0.9.7-p1",
     "glob": "^10.3.4",
-    "js-yaml": "^4.1.0"
+    "glob-watcher": "^6.0.0",
+    "js-yaml": "^4.1.0",
+    "normalize-path": "^3.0.0"
   }
 }

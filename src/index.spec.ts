@@ -1,6 +1,8 @@
 import * as unityToJsonModule from '.';
 import { readAndConvertFbxToGltf } from './unity-to-json/readAndConvertFbxToGltf';
 import { convertUnityProjectToJson } from './unity-to-json/convertUnityProjectToJson';
+import { createUnityProjectToJsonWatcher } from './unity-to-json/createUnityProjectToJsonWatcher';
+
 import { interpretScene } from './unity-to-json/interpretScene';
 import { parseUnityFile } from './unity/parseUnityFile';
 
@@ -10,10 +12,14 @@ describe('unityToJsonModule', () => {
     expect(unityToJsonModule).toHaveProperty('readAndConvertFbxToGltf');
     expect(unityToJsonModule).toHaveProperty('convertUnityProjectToJson');
     expect(unityToJsonModule).toHaveProperty('interpretScene');
+    expect(unityToJsonModule).toHaveProperty('createUnityProjectToJsonWatcher');
 
     expect(unityToJsonModule.parseUnityFile).toEqual(parseUnityFile);
     expect(unityToJsonModule.readAndConvertFbxToGltf).toEqual(readAndConvertFbxToGltf);
     expect(unityToJsonModule.convertUnityProjectToJson).toEqual(convertUnityProjectToJson);
     expect(unityToJsonModule.interpretScene).toEqual(interpretScene);
+
+    expect(unityToJsonModule.createUnityProjectToJsonWatcher)
+      .toEqual(createUnityProjectToJsonWatcher);
   });
 });

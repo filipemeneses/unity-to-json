@@ -25,6 +25,8 @@ yarn add unity-to-json
 
 ## Usage
 
+### Generate files once
+
 ```js
 import path from 'path';
 import { convertUnityProjectToJson, interpretScene } from 'unity-to-json';
@@ -44,6 +46,22 @@ const scene = await interpretScene({
   sceneData: sceneFile.data,
   guidMapping,
   filenameMapping,
+});
+```
+
+### Generate files and watch for changes
+
+```js
+import path from 'path';
+import { convertUnityProjectToJson, interpretScene } from 'unity-to-json';
+
+createUnityProjectToJsonWatcher({
+  unityProjectRootFolderPath: path.resolve('../path/to/unity-project-root'),
+  sceneFilename: 'SampleScene.unity',
+  onSceneChange(context) => {
+    // contains scene represented in JSON with all FBX assets converted to GLTF base64
+    const scene = await interpretScene(context);
+  }
 });
 ```
 

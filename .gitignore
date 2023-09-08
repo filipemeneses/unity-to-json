@@ -117,3 +117,13 @@ dist
 
 # Compiled code
 lib/
+
+# Unity files
+ProjectSettings
+Temp
+UserSettings
+Logs
+Packages
+Library
+
+playground
