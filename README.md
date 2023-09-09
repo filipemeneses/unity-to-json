@@ -28,23 +28,13 @@ yarn add unity-to-json
 
 ```js
 import path from 'path';
-import { convertUnityProjectToJson, interpretScene } from 'unity-to-json';
+import { convertUnityProjectToJson } from 'unity-to-json';
 
 const {
-  sceneFiles,
-  guidMapping,
-  filenameMapping,
+  version,
+  files
 } = await convertUnityProjectToJson({
   unityProjectRootFolderPath: path.resolve('../path/to/unity-project-root'),
-});
-
-const sceneFile = sceneFiles.find((r) => r.filename === 'myScene.unity');
-
-// contains scene represented in JSON with all FBX assets converted to GLTF base64
-const scene = await interpretScene({
-  sceneData: sceneFile.data,
-  guidMapping,
-  filenameMapping,
 });
 ```
 
@@ -57,9 +47,8 @@ import { convertUnityProjectToJson, interpretScene } from 'unity-to-json';
 createUnityProjectToJsonWatcher({
   unityProjectRootFolderPath: path.resolve('../path/to/unity-project-root'),
   sceneFilename: 'SampleScene.unity',
-  onSceneChange(context) => {
-    // contains scene represented in JSON with all FBX assets converted to GLTF base64
-    const scene = await interpretScene(context);
+  onSceneChange({ version , files }) => {
+    // files = all FBX, Unity, Meta files
   }
 });
 ```

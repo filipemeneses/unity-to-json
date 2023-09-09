@@ -1,7 +1,5 @@
 import { glob } from 'glob';
 import { loadAndParseFiles } from './loadAndParseFiles';
-import { setFileToGuidMapping } from './mapping/guidMapping';
-import { setFileToFilenameMapping } from './mapping/filenameMapping';
 import { getUnityProjectGlobs } from './getUnityProjectGlobs';
 
 export const convertUnityProjectToJson = async ({
@@ -26,21 +24,27 @@ export const convertUnityProjectToJson = async ({
     customAssetsFolderPath,
   });
 
-  const sceneFiles = await loadAndParseFiles(await glob(SCENES_FILES_GLOB));
-  const metaFiles = await loadAndParseFiles(await glob(META_FILES_GLOB));
-  const fbxFiles = await loadAndParseFiles(await glob(FBX_FILES_GLOB));
+  const sceneFiles = await loadAndParseFiles(
+    unityProjectRootFolderPath,
+    await glob(SCENES_FILES_GLOB),
+  );
+  const metaFiles = await loadAndParseFiles(
+    unityProjectRootFolderPath,
+    await glob(META_FILES_GLOB),
+  );
+  const fbxFiles = await loadAndParseFiles(
+    unityProjectRootFolderPath,
+    await glob(FBX_FILES_GLOB),
+  );
 
-  const guidMapping = metaFiles.reduce((obj: any, v: any) => setFileToGuidMapping(obj, v), {});
-
-  const filenameMapping = [
+  const files = [
     ...sceneFiles,
     ...metaFiles,
     ...fbxFiles,
-  ].reduce((obj, v) => setFileToFilenameMapping(obj, v), {});
+  ];
 
   return {
-    sceneFiles,
-    guidMapping,
-    filenameMapping,
+    version: 'unity-to-json@v2',
+    files,
   };
 };
