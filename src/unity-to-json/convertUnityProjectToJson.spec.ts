@@ -11,7 +11,7 @@ describe('convertUnityProjectToJson', () => {
 
     expect(result.version).toEqual('unity-to-json@v2');
     expect(result.files[0]).toEqual({
-      filepath: 'Assets\\Scenes\\SampleScene.unity',
+      filepath: 'Assets/Scenes/SampleScene.unity',
       data: [{ fileId: '1.1', type: '%YAML' }, {
         fileId: '1',
         type: '29',
@@ -285,7 +285,7 @@ describe('convertUnityProjectToJson', () => {
       }],
     });
     expect(result.files[1]).toEqual({
-      filepath: 'Assets\\blasterB.fbx.meta',
+      filepath: 'Assets/blasterB.fbx.meta',
       data: [{
         fileId: '2',
         type: 'fileFormatVersion:',
@@ -326,7 +326,7 @@ describe('convertUnityProjectToJson', () => {
       }],
     });
     expect(result.files[2]).toEqual({
-      filepath: 'Assets\\Scenes\\SampleScene.unity.meta',
+      filepath: 'Assets/Scenes/SampleScene.unity.meta',
       data: [{
         fileId: '2',
         type: 'fileFormatVersion:',
@@ -337,7 +337,7 @@ describe('convertUnityProjectToJson', () => {
       }],
     });
 
-    expect(result.files[3].filepath).toEqual('Assets\\blasterB.fbx');
+    expect(result.files[3].filepath).toEqual('Assets/blasterB.fbx');
     expect(result.files[3].data).toStartWith('Z2xURgIAAADsdAAAOBUAAEpTT057CiJhc3Nl');
   });
 });

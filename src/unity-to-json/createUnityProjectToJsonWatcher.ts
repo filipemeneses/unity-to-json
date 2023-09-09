@@ -3,6 +3,7 @@ import path from 'path';
 import { getUnityProjectGlobs } from './getUnityProjectGlobs';
 import { convertUnityProjectToJson } from './convertUnityProjectToJson';
 import { loadAndParseFiles } from './loadAndParseFiles';
+import { toUnixPath } from './toUnixPath';
 
 export const createUnityProjectToJsonWatcher = async ({
   unityProjectRootFolderPath,
@@ -50,7 +51,7 @@ export const createUnityProjectToJsonWatcher = async ({
   });
 
   const onFileUnlink = async (filepath: string) => {
-    context.files = context.files.filter((f) => filepath.endsWith(f.filepath));
+    context.files = context.files.filter((f) => toUnixPath(filepath).endsWith(f.filepath));
 
     await onSceneChange(context);
   };
@@ -79,7 +80,7 @@ export const createUnityProjectToJsonWatcher = async ({
       filepath,
     ]);
 
-    const localFile = context.files.find((f) => filepath.endsWith(f.filepath));
+    const localFile = context.files.find((f) => toUnixPath(filepath).endsWith(f.filepath));
     localFile.data = file.data;
 
     if (path.basename(filepath) !== sceneFilename) {
